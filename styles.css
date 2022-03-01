@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgb(100, 100, 100);
+
+}
+.comparison{
+	display: flex;
+
+}
+.btn-group{
+	display: flex;
+
+}
+.comparison{
+	font-size: 2rem;
+	font-weight: bold;
+}
+.btn-group button{
+	margin: .5rem;
+	padding: .5rem;
+	font-weight: bold;
+	
+}
