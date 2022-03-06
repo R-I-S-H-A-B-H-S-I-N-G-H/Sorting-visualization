@@ -3,4 +3,4 @@
 
 # SCREENSHOTS OF THE PROJECTS
 <img src='./assets/sortingss1.png'>
-<img src='./assets/sortingss1.png'>
+<img src='./assets/sortingss2.png'>
