@@ -15,18 +15,18 @@ async function selectionSortHandler() {
 
 async function selectionSOrt() { 
 	
-	await sleep(delay);
 	for (let i = 0; i < a.length-1; i++) { 
-		for (let j = i+1; j < a.length; j++) {
-			await sleep(delay);
-			
+		for (let j = i + 1; j < a.length; j++) {
 
 			if (a[i] > a[j]) {
 				// swap
+				j2 = j;
+				j1 = i;
 				let t = a[j];
 				a[j] = a[i];
 				a[i] = t;
-			
+				await sleep(delay);
+				
 				comparisons++;
 			
 			} 

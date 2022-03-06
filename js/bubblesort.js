@@ -12,19 +12,21 @@ async function bubbleSortHandler() {
 	console.log('sorted');
 }
 async function bubbleSort() { 
-	await sleep(delay);
 	for (let i = 0; i < a.length; i++) { 
 		for (let j = 0; j < a.length-1; j++) {
-			await sleep(delay);
 			
 
-			if (a[j] > a[j+1]) {
+			if (a[j] > a[j + 1]) {
+				j1 = j;
+				j2 = j + 1;
 				// swap
 				let t = a[j];
 				a[j] = a[j+1];
 				a[j+1] = t;
 			
 				comparisons++;
+				await sleep(delay);
+
 			
 			} 
 			

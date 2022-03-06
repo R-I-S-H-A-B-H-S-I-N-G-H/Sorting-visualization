@@ -25,13 +25,15 @@ async function merge(start, mid, end) {
 		}
 	}
 	while (i <= mid) {
+
         comparisons++;
 
 		b.push(a[i]);
 		i++;
 	}
 
-    while (j <= end) {
+	while (j <= end) {
+		
         comparisons++;
         
 		b.push(a[j]);
@@ -39,8 +41,11 @@ async function merge(start, mid, end) {
 	 }
 	let c = 0;
 	for (let i = start; i <= end; i++) { 
+		
 		a[i] = b[c++];
-		await sleep(delay)
+		j1 = c-1;
+		j2 = i;
+		await sleep(delay);
 		
 	}
 	
@@ -50,14 +55,11 @@ async function mergeSort(i, j) {
 	// console.log("i : ", i, " j : ", j);
 	
 	if (i < j) {
+
 		let mid = (int)((i + j) / 2);
-		await sleep(delay);
 		await mergeSort(i, mid);
-		await sleep(delay);
 		await mergeSort(mid + 1, j)
-		await sleep(delay);
 		await merge(i, mid, j)
-		await sleep(delay);
 
 	}
 	// if (i==a.length-1&&j==a.length-1) { 

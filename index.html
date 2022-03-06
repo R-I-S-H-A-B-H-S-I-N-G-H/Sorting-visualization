@@ -18,17 +18,61 @@
 		<script defer src="js/sketch.js"></script>
 	</head>
 	<body>
-		<div class="comparison">Comparisons: <div class="comVal"></div></div>
+		<div class="navbar">
+			<header>Sorting Visualizer</header>
+
+
+			<div class="buttons">
+
+				<div class="btn-group">
+					<button onclick="scramble()">Scramble</button>
+					<button onclick="mergeSortHandler()">Merge Sort</button>
+					<button onclick="bubbleSortHandler()">Bubble Sort</button>
+					<button onclick="selectionSortHandler()">Selection Sort</button>
+				</div>
+			</div>
+
+			<div class="sliderComplxArea">
+				<div class="sliders">
+					<div class="slider">
+						<label for="slider">Animation Speed  </label>
+						<input
+						type="range"
+						min="1"
+						max="100"
+						value="90"
+						step="1"
+						class="Timeslider"
+						oninput="sliderUpdate()">
+					</div>
+				
+
+					<div class="slider">
+						<label
+						for="ArraySizeslider">Array
+						Size</label>
+						<input type="range" min="10"
+						max="500" value="50"
+						class="ArraySizeslider"
+						oninput="updateArraySize()"
+						>
+					</div>
+				</div>
+
+					
+				<div class="timeComplex">
+					<h1>Time Complexity</h1>
+					<div class="bigoData">
+					<div class="comparison">Comparisons: <div class="comVal"></div></div>
+					<div class="comparison">Array Size: <div class="arraySize"></div></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 		<div class="canvas" id="canvas"></div>
-	<div class="btn-group">
-		<button onclick="scramble()">Scramble</button>
-		<button onclick="mergeSortHandler()">Merge Sort</button>
-		<button onclick="bubbleSortHandler()">Bubble Sort</button>
-		<button onclick="selectionSortHandler()">Selection Sort</button>
-	</div>
-	<div class="slidecontainer">
-  		<input type="range" min="1" max="20" value="5" class="slider" onchange="sliderUpdate()">
-	</div>
+	
 	
 	</body>
 </html>
