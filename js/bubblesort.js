@@ -13,22 +13,23 @@ async function bubbleSortHandler() {
 }
 async function bubbleSort() { 
 	for (let i = 0; i < a.length; i++) { 
-		for (let j = 0; j < a.length-1; j++) {
+		for (let j = 0; j < a.length-1; j++,j1 = j) {
 			
+			j2 = j + 1;
 
 			if (a[j] > a[j + 1]) {
-				j1 = j;
-				j2 = j + 1;
+				
 				// swap
 				let t = a[j];
 				a[j] = a[j+1];
 				a[j+1] = t;
 			
 				comparisons++;
-				await sleep(delay);
 
 			
 			} 
+			await sleep(delay);
+
 			
 
 		}

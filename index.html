@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sorting visulizer</title>
-		<link rel="stylesheet" href="styles/styles.css" />
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
-			integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<script src="js/mergesort.js"></script>
-		<script src="js/bubblesort.js"></script>
-		<script src="js/selectionsort.js"></script>
-		<script defer src="js/sketch.js"></script>
-	</head>
-	<body>
-		<div class="navbar">
-			<header>Sorting Visualizer</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting visulizer</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+      integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/mergesort.js"></script>
+    <script src="js/bubblesort.js"></script>
+    <script src="js/selectionsort.js"></script>
+    <script defer src="js/sketch.js"></script>
+  </head>
 
+  <body>
+    <div class="navbar">
+      <header>
+        <a
+          href="https://github.com/R-I-S-H-A-B-H-S-I-N-G-H/Sorting-visualization"
+          rel="source code"
+          target="/"
+        >
+          Sorting Visualizer
+        </a>
+      </header>
+      <div class="buttons">
+        <div class="btn-group">
+          <button onclick="scramble()">Scramble</button>
+          <button onclick="mergeSortHandler()">Merge Sort</button>
+          <button onclick="bubbleSortHandler()">Bubble Sort</button>
+          <button onclick="selectionSortHandler()">Selection Sort</button>
+        </div>
+      </div>
+      <div class="sliderComplxArea">
+        <div class="sliders">
+          <div class="slider">
+            <label for="slider">Animation Speed </label>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="90"
+              step="1"
+              class="Timeslider"
+              oninput="sliderUpdate()"
+            />
+          </div>
 
-			<div class="buttons">
+          <div class="slider">
+            <label for="ArraySizeslider">Array Size</label>
+            <input
+              type="range"
+              min="10"
+              max="500"
+              value="50"
+              class="ArraySizeslider"
+              oninput="updateArraySize()"
+            />
+          </div>
+        </div>
 
-				<div class="btn-group">
-					<button onclick="scramble()">Scramble</button>
-					<button onclick="mergeSortHandler()">Merge Sort</button>
-					<button onclick="bubbleSortHandler()">Bubble Sort</button>
-					<button onclick="selectionSortHandler()">Selection Sort</button>
-				</div>
-			</div>
-			<div class="sliderComplxArea">
-				<div class="sliders">
-					<div class="slider">
-						<label for="slider">Animation Speed  </label>
-						<input
-						type="range"
-						min="1"
-						max="100"
-						value="90"
-						step="1"
-						class="Timeslider"
-						oninput="sliderUpdate()">
-					</div>
-				
+        <div class="timeComplex">
+          <h1>Time Complexity</h1>
+          <div class="bigoData">
+            <div class="comparison">
+              Comparisons:
+              <div class="comVal"></div>
+            </div>
+            <div class="comparison">
+              Array Size:
+              <div class="arraySize"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<div class="slider">
-						<label
-						for="ArraySizeslider">Array
-						Size</label>
-						<input type="range" min="10"
-						max="500" value="50"
-						class="ArraySizeslider"
-						oninput="updateArraySize()"
-						>
-					</div>
-				</div>
-
-					
-				<div class="timeComplex">
-					<h1>Time Complexity</h1>
-					<div class="bigoData">
-					<div class="comparison">Comparisons: <div class="comVal"></div></div>
-					<div class="comparison">Array Size: <div class="arraySize"></div></div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="canvas" id="canvas"></div>
-	
-	
-	</body>
+    <div class="canvas" id="canvas"></div>
+  </body>
 </html>
